@@ -64,6 +64,16 @@ function playerChoice() {
     return prompt("Please enter you choice: Rock, Paper or Scissors!");
 }
 
-//const playerChoice = "rock";
+function game() {
+    // initalise two variables to keep track of the score. 
+    let playerScore = 0;
+    let computerScore = 0;
 
-console.log(playRound(playerChoice(), getComputerChoice()));
+    for (i = 0; i < 5; i++) {
+        //playRound(playerChoice(), getComputerChoice());
+        console.log(playRound(playerChoice(), getComputerChoice()));
+    }
+}
+
+game();
+//console.log(playRound(playerChoice(), getComputerChoice()));
