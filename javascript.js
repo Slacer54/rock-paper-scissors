@@ -1,3 +1,9 @@
+    // RULES OF GAME
+    // Rock beats Scissors, loses to Paper.
+    // Paper beats Rock, loses to Scissors.
+    // Scissors beats Paper, loses to Rock.
+    // If both same choice - Draw.
+
 function getComputerChoice() {
 
     // Randomly choose number from 1 to 3. Store result in variable choice.
@@ -21,14 +27,22 @@ function playRound(playerChoice, computerChoice) {
 
     // Player choice should be case insensitive. 
     playerChoice = playerChoice.toLowerCase();
-    console.log(playerChoice);
-    // Initalise boolean variable playerWin.
+
     // Compare players choice with computers.
-    // If players choice beats computer, set playerWin to True.
-    // Otherwise playerWin is set to False
     // Return a string that declares the winner of the round
+    if (playerChoice === computerChoice) {
+        return `Draw! Computer also chose ${playerChoice}!`;
+    }
+
+    if (playerChoice === "rock") {
+        if (computerChoice === "paper") {
+            return "You loose! Paper beats Rock!";
+        } else if (computerChoice === "scissors") {
+            return "You win! Rock beats Scissors"
+        }
+    }
 }
 
-const playerChoice = "PAPER";
+const playerChoice = "rock";
 
-playRound(playerChoice, getComputerChoice());
+console.log(playRound(playerChoice, getComputerChoice()));
