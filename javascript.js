@@ -1,7 +1,7 @@
 function getComputerChoice() {
+
     // Randomly choose number from 1 to 3. Store result in variable choice.
     let choice = Math.floor(Math.random() * 3) + 1;
-    console.log(choice);
     // If choice is 1, return rock
     // If choice is 2, return to paper
     // If choice is 3, return to scissors 
@@ -16,9 +16,12 @@ function getComputerChoice() {
 
 }
 
+// Function should take two parameters. Players choice and the computers
 function playRound(playerChoice, computerChoice) {
-    // Function should take two parameters. Players choice and the computers
-    // Player choice should be case insensitive. Initalise variable playerChoiceNoCase
+
+    // Player choice should be case insensitive. 
+    playerChoice = playerChoice.toLowerCase();
+    console.log(playerChoice);
     // Initalise boolean variable playerWin.
     // Compare players choice with computers.
     // If players choice beats computer, set playerWin to True.
@@ -26,6 +29,6 @@ function playRound(playerChoice, computerChoice) {
     // Return a string that declares the winner of the round
 }
 
-const playerChoice = "rock";
+const playerChoice = "PAPER";
 
-console.log(getComputerChoice());
+playRound(playerChoice, getComputerChoice());
