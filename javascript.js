@@ -15,4 +15,17 @@ function getComputerChoice() {
     }
 
 }
+
+function playRound(playerChoice, computerChoice) {
+    // Function should take two parameters. Players choice and the computers
+    // Player choice should be case insensitive. Initalise variable playerChoiceNoCase
+    // Initalise boolean variable playerWin.
+    // Compare players choice with computers.
+    // If players choice beats computer, set playerWin to True.
+    // Otherwise playerWin is set to False
+    // Return a string that declares the winner of the round
+}
+
+const playerChoice = "rock";
+
 console.log(getComputerChoice());
