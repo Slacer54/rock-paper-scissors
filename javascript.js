@@ -24,6 +24,7 @@ function getComputerChoice() {
 
 // Function should take two parameters. Players choice and the computers
 function playRound(playerChoice, computerChoice) {
+    
 
     // Player choice should be case insensitive. 
     playerChoice = playerChoice.toLowerCase();
@@ -59,6 +60,10 @@ function playRound(playerChoice, computerChoice) {
     }
 }
 
+function playerChoice() {
+    return prompt("Please enter you choice: Rock, Paper or Scissors!");
+}
+
 //const playerChoice = "rock";
 
-console.log(playRound(getComputerChoice(), getComputerChoice()));
+console.log(playRound(playerChoice(), getComputerChoice()));
