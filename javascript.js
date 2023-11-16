@@ -37,7 +37,7 @@ function playRound(playerChoice, computerChoice) {
 
     if (playerChoice === "rock") {
         if (computerChoice === "paper") {
-            return "You loose! Paper beats Rock!";
+            return "You lose! Paper beats Rock!";
         } else if (computerChoice === "scissors") {
             return "You win! Rock beats Scissors"
         }
@@ -47,7 +47,7 @@ function playRound(playerChoice, computerChoice) {
         if (computerChoice === "rock") {
             return "You win! Paper beats Rock!";
         } else if (computerChoice === "scissors") {
-            return "You loose! Scissors beats Paper"
+            return "You lose! Scissors beats Paper"
         }
     }
 
@@ -55,7 +55,7 @@ function playRound(playerChoice, computerChoice) {
         if (computerChoice === "paper") {
             return "You win! Scissors beats Paper!";
         } else if (computerChoice === "rock") {
-            return "You loose! Rock beats Scissors"
+            return "You lose! Rock beats Scissors"
         }
     }
 }
@@ -70,9 +70,22 @@ function game() {
     let computerScore = 0;
 
     for (i = 0; i < 5; i++) {
-        //playRound(playerChoice(), getComputerChoice());
-        console.log(playRound(playerChoice(), getComputerChoice()));
+        
+        let score = playRound(playerChoice(), getComputerChoice());
+
+        if (score.includes("win")) {
+            console.log(score);
+            playerScore++
+        } else if (score.includes("lose")) {
+            console.log(score);
+            computerScore++;
+        } else {
+            console.log(score);
+            playerScore++;
+            computerScore++
+        }
     }
+    console.log(playerScore + " " + computerScore);
 }
 
 game();
