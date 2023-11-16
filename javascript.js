@@ -69,10 +69,12 @@ function game() {
     let playerScore = 0;
     let computerScore = 0;
 
+    // play 5 rounds of the game
     for (i = 0; i < 5; i++) {
         
         let score = playRound(playerChoice(), getComputerChoice());
 
+        // check to see if the returned string contains 'win' or 'lose'
         if (score.includes("win")) {
             console.log(score);
             playerScore++
@@ -86,6 +88,15 @@ function game() {
         }
     }
     console.log(playerScore + " " + computerScore);
+
+    // compare scores and log the winner.
+    if (playerScore > computerScore) {
+        console.log("CONGRATULATIONS! You are the winner!!");
+    } else if (playerScore < computerScore) {
+        console.log("OH NO! Sorry bud, you lost this one :(");
+    } else {
+        console.log("DRAW! You both prevailed but in the end it\'s a stalemate");
+    }
 }
 
 game();
